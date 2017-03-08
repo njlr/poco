@@ -1,3 +1,6 @@
 {
-  "name": "poco-mongodb",
+  "name": "poco-net",
+  "dependencies": {
+    "poco-foundation": "1.7.8"
+  }
 }
