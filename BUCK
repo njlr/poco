@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 windows_sources = glob([
-  'Util/src/WinService.cpp.cpp',
+  'Util/src/WinService.cpp',
   'Util/src/WinRegistryConfiguration.cpp',
   'Util/src/WinRegistryKey.cpp',
 ])
