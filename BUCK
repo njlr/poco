@@ -1,23 +1,14 @@
 include_defs('//BUCKAROO_DEPS')
 
-windows_sources = glob([
-  'Util/src/WinService.cpp.cpp',
-  'Util/src/WinRegistryConfiguration.cpp',
-  'Util/src/WinRegistryKey.cpp',
-])
-
 cxx_library(
-  name = 'poco-util', 
-  header_namespace = 'Poco/Util',
+  name = 'poco-json', 
+  header_namespace = 'Poco/JSON',
   exported_headers = subdir_glob([
-    ('Util/include/Poco/Util', '**/*.h'),
+    ('JSON/include/Poco/JSON', '**/*.h'),
   ]),
   srcs = glob([
-    'Util/src/**/*.cpp',
-  ], excludes = windows_sources),
-  platform_srcs = [
-    ('^windows.*', windows_sources),
-  ],
+    'JSON/src/**/*.cpp',
+  ]),
   compiler_flags = [
     '-std=c++14',
   ],
