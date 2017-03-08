@@ -1,23 +1,14 @@
 include_defs('//BUCKAROO_DEPS')
 
-windows_sources = glob([
-  'Util/src/WinService.cpp',
-  'Util/src/WinRegistryConfiguration.cpp',
-  'Util/src/WinRegistryKey.cpp',
-])
-
 cxx_library(
-  name = 'poco-util', 
-  header_namespace = 'Poco/Util',
+  name = 'poco-crypto', 
+  header_namespace = 'Poco/Crypto',
   exported_headers = subdir_glob([
-    ('Util/include/Poco/Util', '**/*.h'),
+    ('Crypto/include/Poco/Crypto', '**/*.h'),
   ]),
   srcs = glob([
-    'Util/src/**/*.cpp',
-  ], excludes = windows_sources),
-  platform_srcs = [
-    ('^windows.*', windows_sources),
-  ],
+    'Crypto/src/**/*.cpp',
+  ]),
   compiler_flags = [
     '-std=c++14',
   ],
