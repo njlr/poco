@@ -1,20 +1,24 @@
 include_defs('//BUCKAROO_DEPS')
 
+windows_sources = glob([
+  'Util/src/WinService.cpp.cpp',
+  'Util/src/WinRegistryConfiguration.cpp',
+])
+
 cxx_library(
-  name = 'poco-xml', 
-  header_namespace = 'poco',
+  name = 'poco-util', 
+  header_namespace = 'Poco/Util',
   exported_headers = subdir_glob([
-    ('XML/include/Poco', '**/*.h'),
+    ('Util/include/Poco/Util', '**/*.h'),
   ]),
   srcs = glob([
-    'XML/src/**/*.cpp',
-  ]),
+    'Util/src/**/*.cpp',
+  ], excludes = windows_sources),
+  platform_srcs = [
+    ('^windows.*', windows_sources),
+  ],
   compiler_flags = [
     '-std=c++14',
-  ],
-  platform_compiler_flags = [
-    ('default', ['-DHAVE_MEMMOVE']),
-    ('^macos.*', ['-DHAVE_MEMMOVE']),
   ],
   visibility = [
     'PUBLIC',
