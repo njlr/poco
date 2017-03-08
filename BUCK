@@ -1,19 +1,35 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-zip', 
-  header_namespace = 'Poco/Zip',
+  name = '7zip',
+  header_namespace = '',
   exported_headers = subdir_glob([
-    ('Zip/include/Poco/Zip', '**/*.h'),
+    ('SevenZip/src', '**/*.h'),
   ]),
   srcs = glob([
-    'Zip/src/**/*.cpp',
+    'SevenZip/src/**/*.c',
   ]),
   compiler_flags = [
-    '-std=c++14',
+    '-D_7ZIP_ST',
+  ],
+)
+
+cxx_library(
+  name = 'poco-seven-zip', 
+  header_namespace = 'Poco/SevenZip',
+  exported_headers = subdir_glob([
+    ('SevenZip/include/Poco/SevenZip', '**/*.h'),
+  ]),
+  srcs = glob([
+    'SevenZip/src/**/*.cpp',
+  ]),
+  compiler_flags = [
+    # '-std=c++14',
   ],
   visibility = [
     'PUBLIC',
   ],
-  deps = BUCKAROO_DEPS,
+  deps = BUCKAROO_DEPS + [
+    ':7zip',
+  ],
 )
