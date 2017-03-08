@@ -1,13 +1,13 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-cpp-parser', 
-  header_namespace = 'Poco/CppParser',
+  name = 'poco-cpp-unit', 
+  header_namespace = 'CppUnit',
   exported_headers = subdir_glob([
-    ('CppParser/include/Poco/CppParser', '**/*.h'),
+    ('CppUnit/include/CppUnit', '**/*.h'),
   ]),
   srcs = glob([
-    'CppParser/src/**/*.cpp',
+    'CppUnit/src/**/*.cpp',
   ]),
   compiler_flags = [
     '-std=c++14',
