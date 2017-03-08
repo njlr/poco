@@ -1,13 +1,13 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-crypto', 
-  header_namespace = 'Poco/Crypto',
+  name = 'poco-cpp-parser', 
+  header_namespace = 'Poco/CppParser',
   exported_headers = subdir_glob([
-    ('Crypto/include/Poco/Crypto', '**/*.h'),
+    ('CppParser/include/Poco/CppParser', '**/*.h'),
   ]),
   srcs = glob([
-    'Crypto/src/**/*.cpp',
+    'CppParser/src/**/*.cpp',
   ]),
   compiler_flags = [
     '-std=c++14',

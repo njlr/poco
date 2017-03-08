@@ -1,5 +1,5 @@
 {
-  "name": "poco-crypto",
+  "name": "poco-cpp-parser",
   "dependencies": {
     "poco-foundation": "1.7.8"
   }
