@@ -1,13 +1,13 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-mongodb', 
-  header_namespace = 'Poco/MongoDB',
+  name = 'poco-zip', 
+  header_namespace = 'Poco/Zip',
   exported_headers = subdir_glob([
-    ('MongoDB/include/Poco/MongoDB', '**/*.h'),
+    ('Zip/include/Poco/Zip', '**/*.h'),
   ]),
   srcs = glob([
-    'MongoDB/src/**/*.cpp',
+    'Zip/src/**/*.cpp',
   ]),
   compiler_flags = [
     '-std=c++14',
