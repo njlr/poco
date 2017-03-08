@@ -1,13 +1,13 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-cpp-unit', 
-  header_namespace = 'CppUnit',
+  name = 'poco-data', 
+  header_namespace = 'Poco/Data',
   exported_headers = subdir_glob([
-    ('CppUnit/include/CppUnit', '**/*.h'),
+    ('Data/include/Poco/Data', '**/*.h'),
   ]),
   srcs = glob([
-    'CppUnit/src/**/*.cpp',
+    'Data/src/**/*.cpp',
   ]),
   compiler_flags = [
     '-std=c++14',
