@@ -1,0 +1,6 @@
+{
+  "name": "poco-xml",
+  "dependencies": {
+    "poco-foundation": "1.63.0"
+  }
+}
