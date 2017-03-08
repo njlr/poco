@@ -30,7 +30,7 @@ other_sources = glob([
 
 cxx_library(
   name = 'poco-foundation', 
-  header_namespace = 'poco',
+  header_namespace = 'Poco',
   exported_headers = subdir_glob([
     ('Foundation/include/Poco', '**/*.h'),
   ]),
