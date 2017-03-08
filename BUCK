@@ -3,6 +3,7 @@ include_defs('//BUCKAROO_DEPS')
 windows_sources = glob([
   'Util/src/WinService.cpp.cpp',
   'Util/src/WinRegistryConfiguration.cpp',
+  'Util/src/WinRegistryKey.cpp',
 ])
 
 cxx_library(
