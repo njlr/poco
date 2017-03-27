@@ -15,7 +15,7 @@ cxx_library(
 )
 
 cxx_library(
-  name = 'poco-seven-zip', 
+  name = 'seven-zip',
   header_namespace = 'Poco/SevenZip',
   exported_headers = subdir_glob([
     ('SevenZip/include/Poco/SevenZip', '**/*.h'),
@@ -24,7 +24,7 @@ cxx_library(
     'SevenZip/src/**/*.cpp',
   ]),
   compiler_flags = [
-    # '-std=c++14',
+    '-std=c++14',
   ],
   visibility = [
     'PUBLIC',
