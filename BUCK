@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-cpp-unit', 
+  name = 'cpp-unit', 
   header_namespace = 'CppUnit',
   exported_headers = subdir_glob([
     ('CppUnit/include/CppUnit', '**/*.h'),
