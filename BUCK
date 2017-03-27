@@ -29,14 +29,14 @@ other_sources = glob([
 ])
 
 cxx_library(
-  name = 'poco-foundation', 
+  name = 'foundation', 
   header_namespace = 'Poco',
   exported_headers = subdir_glob([
     ('Foundation/include/Poco', '**/*.h'),
   ]),
   srcs = glob([
     'Foundation/src/**/*.cpp',
-  ], 
+  ],
   excludes = windows_sources + macos_sources + linux_sources + other_sources),
   platform_srcs = [
     ('default', macos_sources),
