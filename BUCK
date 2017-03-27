@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-cpp-parser', 
+  name = 'cpp-parser', 
   header_namespace = 'Poco/CppParser',
   exported_headers = subdir_glob([
     ('CppParser/include/Poco/CppParser', '**/*.h'),
