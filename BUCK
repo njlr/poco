@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-net', 
+  name = 'net', 
   header_namespace = 'Poco/Net',
   exported_headers = subdir_glob([
     ('Net/include/Poco/Net', '**/*.h'),
