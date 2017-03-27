@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-xml', 
+  name = 'xml', 
   header_namespace = 'Poco',
   exported_headers = subdir_glob([
     ('XML/include/Poco', '**/*.h'),
