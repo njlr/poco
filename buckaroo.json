@@ -1,6 +1,8 @@
 {
-  "name": "seven-zip",
+  "name": "netssl-openssl",
   "dependencies": {
-    "pocoproject/foundation": "1.7.8"
+    "pocoproject/net": "1.7.8",
+    "pocoproject/crypto": "1.7.8",
+    "pocoproject/util": "1.7.8"
   }
 }

@@ -1,27 +1,13 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = '7zip',
-  header_namespace = '',
+  name = 'netssl-openssl',
+  header_namespace = 'Poco/Net',
   exported_headers = subdir_glob([
-    ('SevenZip/src', '**/*.h'),
+    ('NetSSL_OpenSSL/include/Poco/Net', '**/*.h'),
   ]),
   srcs = glob([
-    'SevenZip/src/**/*.c',
-  ]),
-  compiler_flags = [
-    '-D_7ZIP_ST',
-  ],
-)
-
-cxx_library(
-  name = 'seven-zip',
-  header_namespace = 'Poco/SevenZip',
-  exported_headers = subdir_glob([
-    ('SevenZip/include/Poco/SevenZip', '**/*.h'),
-  ]),
-  srcs = glob([
-    'SevenZip/src/**/*.cpp',
+    'NetSSL_OpenSSL/src/**/*.cpp',
   ]),
   compiler_flags = [
     '-std=c++14',
@@ -29,7 +15,5 @@ cxx_library(
   visibility = [
     'PUBLIC',
   ],
-  deps = BUCKAROO_DEPS + [
-    ':7zip',
-  ],
+  deps = BUCKAROO_DEPS,
 )
