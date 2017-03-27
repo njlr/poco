@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-mongodb', 
+  name = 'mongodb', 
   header_namespace = 'Poco/MongoDB',
   exported_headers = subdir_glob([
     ('MongoDB/include/Poco/MongoDB', '**/*.h'),
