@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-data', 
+  name = 'data', 
   header_namespace = 'Poco/Data',
   exported_headers = subdir_glob([
     ('Data/include/Poco/Data', '**/*.h'),
