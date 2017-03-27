@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-json', 
+  name = 'json', 
   header_namespace = 'Poco/JSON',
   exported_headers = subdir_glob([
     ('JSON/include/Poco/JSON', '**/*.h'),
