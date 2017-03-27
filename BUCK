@@ -7,7 +7,7 @@ windows_sources = glob([
 ])
 
 cxx_library(
-  name = 'poco-util', 
+  name = 'util', 
   header_namespace = 'Poco/Util',
   exported_headers = subdir_glob([
     ('Util/include/Poco/Util', '**/*.h'),
