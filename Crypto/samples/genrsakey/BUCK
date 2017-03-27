@@ -1,0 +1,9 @@
+cxx_binary(
+  name = 'genrsakey',
+  srcs = [
+    'src/genrsakey.cpp',
+  ],
+  deps = [
+    '//:crypto',
+  ],
+)

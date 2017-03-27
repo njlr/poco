@@ -1,7 +1,7 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'poco-crypto', 
+  name = 'crypto', 
   header_namespace = 'Poco/Crypto',
   exported_headers = subdir_glob([
     ('Crypto/include/Poco/Crypto', '**/*.h'),
