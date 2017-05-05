@@ -51,6 +51,10 @@ cxx_library(
     ('default', ['-D__TOS_MACOS__', '-DARCHFLAGS=-arch x86_64', '-DPOCO_TARGET_OSARCH=x86_64', '-DUSE_STATIC_LIBRARIES=0']),
     ('^macos.*', ['-D__TOS_MACOS__', '-DARCHFLAGS=-arch x86_64', '-DPOCO_TARGET_OSARCH=x86_64', '-DUSE_STATIC_LIBRARIES=0']),
   ],
+  exported_platform_linker_flags = [
+    ('default', ['-lpthread']),
+    ('^linux.*', ['-lpthread'])
+  ],
   visibility = [
     'PUBLIC',
   ],
