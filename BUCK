@@ -15,7 +15,7 @@ windows_sources = glob([
   'Foundation/src/**/*_WIN32.cpp',
   'Foundation/src/**/*_WIN32U.cpp',
   'Foundation/src/**/*_WINCE.cpp',
-  'Foundation/src/**/Windows*.cpp',
+  'Foundation/src/**/WindowsC*.cpp',
 ])
 
 other_sources = glob([
@@ -29,7 +29,7 @@ other_sources = glob([
 ])
 
 cxx_library(
-  name = 'foundation', 
+  name = 'foundation',
   header_namespace = 'Poco',
   exported_headers = subdir_glob([
     ('Foundation/include/Poco', '**/*.h'),
