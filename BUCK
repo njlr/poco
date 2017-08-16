@@ -1,3 +1,5 @@
+include_defs('//BUCKAROO_DEPS')
+
 linux_sources = glob([
   'Foundation/src/SyslogChannel.cpp',
   'Foundation/src/**/*_POSIX.cpp',
@@ -40,6 +42,17 @@ linux_linker_flags = [
 ]
 
 cxx_library(
+  name = 'foundation-c',
+  header_namespace = '',
+  exported_headers = subdir_glob([
+    ('Foundation/src', '**/*.h'),
+  ]),
+  srcs = glob([
+    'Foundation/src/**/*.c',
+  ]),
+)
+
+cxx_library(
   name = 'foundation',
   header_namespace = 'Poco',
   exported_headers = subdir_glob([
@@ -47,6 +60,7 @@ cxx_library(
   ]),
   srcs = glob([
     'Foundation/src/**/*.cpp',
+    'Foundation/src/**/*.cc',
   ],
   excludes = windows_sources + macos_sources + linux_sources + other_sources),
   platform_srcs = [
@@ -56,7 +70,7 @@ cxx_library(
     ('^windows.*', windows_sources),
   ],
   compiler_flags = [
-    '-std=c++11', 
+    '-std=c++11',
   ],
   platform_compiler_flags = [
     ('default', macos_compiler_flags),
@@ -64,7 +78,10 @@ cxx_library(
   ],
   exported_platform_linker_flags = [
     ('default', []),
-    ('^linux.*', linux_linker_flags), 
+    ('^linux.*', linux_linker_flags),
+  ],
+  deps = BUCKAROO_DEPS + [
+    ':foundation-c',
   ],
   visibility = [
     'PUBLIC',
