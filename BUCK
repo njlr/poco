@@ -28,6 +28,17 @@ other_sources = glob([
   'Foundation/src/**/*_SUN.cpp',
 ])
 
+macos_compiler_flags = [
+  '-D__TOS_MACOS__',
+  '-DARCHFLAGS=-arch x86_64',
+  '-DPOCO_TARGET_OSARCH=x86_64',
+  '-DUSE_STATIC_LIBRARIES=0',
+]
+
+linux_linker_flags = [
+  '-lpthread',
+]
+
 cxx_library(
   name = 'foundation',
   header_namespace = 'Poco',
@@ -44,16 +55,13 @@ cxx_library(
     ('^linux.*', linux_sources),
     ('^windows.*', windows_sources),
   ],
-  compiler_flags = [
-    '-std=c++14',
-  ],
   platform_compiler_flags = [
-    ('default', ['-D__TOS_MACOS__', '-DARCHFLAGS=-arch x86_64', '-DPOCO_TARGET_OSARCH=x86_64', '-DUSE_STATIC_LIBRARIES=0']),
-    ('^macos.*', ['-D__TOS_MACOS__', '-DARCHFLAGS=-arch x86_64', '-DPOCO_TARGET_OSARCH=x86_64', '-DUSE_STATIC_LIBRARIES=0']),
+    ('default', macos_compiler_flags),
+    ('^macos.*', macos_compiler_flags),
   ],
   exported_platform_linker_flags = [
-    ('default', ['-lpthread']),
-    ('^linux.*', ['-lpthread'])
+    ('default', []),
+    ('^linux.*', linux_linker_flags), 
   ],
   visibility = [
     'PUBLIC',

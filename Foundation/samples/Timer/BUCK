@@ -1,0 +1,9 @@
+cxx_binary(
+  name = 'Timer',
+  srcs = glob([
+    'src/**/*.cpp',
+  ]),
+  deps = [
+    '//:foundation',
+  ],
+)
