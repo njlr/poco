@@ -55,6 +55,9 @@ cxx_library(
     ('^linux.*', linux_sources),
     ('^windows.*', windows_sources),
   ],
+  compiler_flags = [
+    '-std=c++11', 
+  ],
   platform_compiler_flags = [
     ('default', macos_compiler_flags),
     ('^macos.*', macos_compiler_flags),
